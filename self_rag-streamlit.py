@@ -3,16 +3,7 @@ import os
 
 
 import pprint
-os.environ['OPENAI_API_KEY']=st.secrets["OPENAI_API_KEY"]
-# Get the value of the OPENAI_API_KEY environment variable
-api_key = os.environ.get("OPENAI_API_KEY")
 
-# Check if the environment variable is set
-if api_key is not None:
-    # print("OPENAI_API_KEY:", api_key)
-    pprint.pprint("OPENAI_API_KEY setted")
-else:
-    pprint.pprint("OPENAI_API_KEY is not set.")
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
@@ -37,6 +28,16 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_core.utils.function_calling import convert_to_openai_tool
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langgraph.graph import END, StateGraph
+os.environ['OPENAI_API_KEY']=st.secrets["OPENAI_API_KEY"]
+# Get the value of the OPENAI_API_KEY environment variable
+api_key = os.environ.get("OPENAI_API_KEY")
+
+# Check if the environment variable is set
+if api_key is not None:
+    # print("OPENAI_API_KEY:", api_key)
+    pprint.pprint("OPENAI_API_KEY setted")
+else:
+    pprint.pprint("OPENAI_API_KEY is not set.")
 st.set_page_config(
     page_title="LANGGRAPH",
     page_icon="✨",
