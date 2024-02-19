@@ -511,6 +511,7 @@ def main():
     except Exception as e:
         st.write("Upload the RFP")
         print(f"An error occurred: {str(e)}")
+        st.write(f"An error occurred: {str(e)}")
 if __name__ == "__main__":
     main()
                     # -----------------------------------------RUN---------------------------------------------------
